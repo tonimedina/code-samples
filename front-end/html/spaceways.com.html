@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Find a Forecast</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <script type="text/x-handlebars">
+
+      {{outlet}}
+
+      <footer class="text-right">Made by <a href="http://tonimedina.net" target="_blank">Toni Medina</a></footer>
+
+    </script>
+
+    <script type="text/x-handlebars" id="index">
+
+      <div class="container">
+
+        <header class="row">
+
+          <div class="col-xs-12">
+
+            <h1 class="text-center"><i class="wi wi-horizon-alt"></i><br>Find a Forecast</h1>
+
+          </div>
+
+        </header>
+
+        <form {{action 'handleSubmit' on="submit"}} role="form">
+
+          <div class="row">
+
+            <div class="col-sm-8 col-sm-offset-2">
+
+              <div class="input-group">
+
+                <label class="sr-only" for="city">City:</label>
+
+                {{input value=city class="form-control" id="city" placeholder="eg. Berlin"}}
+
+                <span class="input-group-btn">
+
+                  <button class="btn btn-success" type="submit">
+
+                    <i class="glyphicon glyphicon-search"></i> What's the weather?
+
+                  </button>
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </script>
+
+    <script type="text/x-handlebars" id="forecast">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-xs-8 col-sm-6 col-sm-offset-2 col-md-4 col-md-offset-3">
+
+            <p class="color-inverted">{{shorter-title title}}</p>
+
+          </div>
+
+          <div class="col-xs-4 col-sm-2 col-md-2">
+
+            <div class="btn-group pull-right">
+
+              <button {{bind-attr class=":btn :btn-default :unit isFahrenheit:active"}} {{action 'changeUnit'}} type="button">&deg;F</button>
+
+              <button {{bind-attr class=":btn :btn-default :unit isCelsius:active"}} {{action 'changeUnit'}} type="button">&deg;C</button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+            <h1 class="text-center">
+
+              {{wi-icon item.condition.code}}<br>
+
+              {{#if isFahrenheit}}
+
+                {{item.condition.temp}}&deg;F
+
+              {{else}}
+
+                {{to-celsius item.condition.temp}}&deg;C
+
+              {{/if}}
+
+            </h1>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
+
+            <p class="description lead">{{item.condition.text}}</p>
+
+          </div>
+
+          <div class="col-xs-6 col-sm-4 col-md-3">
+
+            <p class="text-right">{{format-date item.condition.pubDate}}</p>
+
+          </div>
+
+        </div>
+
+        {{#if item.forecast}}
+
+          <div class="row">
+
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+
+              <table class="table">
+
+                <tbody>
+
+                  {{#each item in item.forecast}}
+
+                    <tr>
+
+                      <td width="40px">{{wi-icon item.code}}</td>
+
+                      <td width="70px">
+
+                        {{#if isFahrenheit}}
+
+                          {{item.high}}/{{item.low}}
+
+                        {{else}}
+
+                          {{to-celsius item.high}}/{{to-celsius item.low}}
+
+                        {{/if}}
+
+                      </td>
+
+                      <td>{{item.day}}</td>
+
+                      <td width="50px">
+
+                        <i class="wi wi-up"></i>
+
+                        {{#if isFahrenheit}}
+
+                          {{item.high}}
+
+                        {{else}}
+
+                          {{to-celsius item.high}}
+
+                        {{/if}}
+
+                      </td>
+
+                      <td width="50px">
+
+                        <i class="wi wi-down"></i>
+
+                        {{#if isFahrenheit}}
+
+                          {{item.low}}
+
+                        {{else}}
+
+                          {{to-celsius item.low}}
+
+                        {{/if}}
+
+                      </td>
+
+                    </tr>
+
+                  {{/each}}
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+        {{/if}}
+
+      </div>
+
+    </script>
+
+    <script src="js/libs/jquery-1.10.2.js"></script>
+
+    <script src="js/libs/handlebars-v1.3.0.js"></script>
+
+    <script src="js/libs/ember-1.8.1.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
+
+    <script src="tests/runner.js"></script>
+
+  </body>
+
+</html>

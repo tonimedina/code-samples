@@ -1,0 +1,94 @@
+.flexslider {
+	background: transparent;
+	margin: 0 auto 20px;
+	position: relative;
+	zoom: 1;
+}
+
+.flexslider li {
+	list-style: none;
+	margin: 0;
+	text-align: center;
+}
+
+.flex-viewport li img {
+	max-height: 546px;
+	max-width: 546px !important;
+}
+
+.flexslider .slides {
+	margin: 0 auto;
+	zoom: 1;
+}
+
+.flexslider .caption {
+	margin: 20px 0 0;
+	text-align: left;
+}
+
+.flex-viewport img:hover { cursor: pointer; }
+
+.flex-direction-nav a {
+	cursor: pointer;
+	display: block;
+	font: normal 26px/1 Helvetica Neue, Arial, Helvetica, sans-serif;
+	height: 47px;
+	margin: -13px 0 0;
+	opacity: .4;
+	position: absolute;
+	text-align: center;
+	text-decoration: none;
+	text-indent: -999%;
+	top: 50%;
+	width: 47px;
+
+	-webkit-transition: opacity 200ms ease-in-out;
+	   -moz-transition: opacity 200ms ease-in-out;
+	    -ms-transition: opacity 200ms ease-in-out;
+	     -o-transition: opacity 200ms ease-in-out;
+	        transition: opacity 200ms ease-in-out;
+}
+
+.flex-direction-nav .flex-next { right: 0; }
+
+.flex-direction-nav .flex-prev { left: 0; }
+
+.scroll-gallery-slider .flex-direction-nav .flex-prev,
+.scroll-gallery-slider .flex-direction-nav .flex-next {
+	border: none;
+	color: transparent;
+	top: 13px;
+}
+
+.scroll-gallery-carousel .flex-direction-nav .flex-prev,
+.scroll-gallery-carousel .flex-direction-nav .flex-next {
+	border: none;
+	color: transparent;
+	top: 50%;
+	margin-top: -24px;
+}
+
+.scroll-gallery-slider .flex-direction-nav .flex-prev {
+	background: url(../img/big-arrow-left.png) center left no-repeat;
+	border: none;
+	color: transparent;
+}
+
+.scroll-gallery-slider .flex-direction-nav .flex-next {
+	background: url(../img/big-arrow-right.png) center right no-repeat;
+	border: none;
+	color: transparent;
+}
+
+.scroll-gallery-carousel .flex-direction-nav .flex-prev { background: url(../img/small-arrow-left.png) center left no-repeat; }
+
+.scroll-gallery-carousel .flex-direction-nav .flex-next { background: url(../img/small-arrow-right.png) center right no-repeat; }
+
+.flexslider:hover .flex-next,
+.flexslider:hover .flex-prev { text-decoration: none; }
+
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+	opacity: 1;
+	text-shadow: 1px 1px 0 #000;
+}

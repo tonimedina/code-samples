@@ -1,0 +1,139 @@
+.newsletter_widget {
+    background-color: rgba(0,0,0,0.95);
+    font-family: 'Questrial', sans-serif;
+    position: fixed;
+    z-index: 999999;
+   	width: 400px;
+	height: auto;
+	bottom: 0px;
+	display:none;
+	left: 50%;
+	margin-left: -280px;
+	text-align: center;
+	padding:30px 80px;
+	-webkit-box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+}
+.newsletter_info {
+    margin-bottom: 20px;
+}
+.newsletter_message {
+    color:#fff;
+    font-size:16px;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 22px;
+    text-align: center;
+}
+.newsletter_container {
+	margin:0 auto;
+	padding-top:15px;
+}
+.newsletter_widget .thankyou  {
+	font-size:17px;
+	color: #fff;
+	display:block;
+	text-align:center;
+}
+
+.newsletter_message .error{
+	color:#fff;
+	border:1px solid #BE1E2D;
+    margin-right: 10px;
+    padding: 5px;
+    display:block;
+	font-size:15px;
+}
+
+.newsletter_widget .newsletter_close{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #fff;
+    font-size:20px;
+    height:20px;
+    line-height: 20px;
+    cursor:pointer;
+}
+.newsletter_form{
+	display:inline-block;
+}
+.newsletter_form span{
+	color:#BE1E2D;
+	font-size: 15px;
+	display:block;
+}
+.newsletter_widget input {
+	display:inline;
+	float:left;
+	margin-top:8px;
+	margin-left:10px;
+    font-family: 'Questrial', sans-serif;
+	font-size:14px;
+	color: #000;
+}
+.newsletter_widget .newsletter_email {
+    border: none;
+    font-size: 12px;
+    height: 23px;
+    width: 150px;
+    padding:0 9px;
+}
+
+.newsletter_widget .submitNewsletter {
+    background: none repeat scroll 0 0 #BE1E2D;
+    font-size: 13px;
+    color: #fff;
+    height: 23px;
+    border: none;
+    font-family: 'Questrial', sans-serif;
+    padding:0px 5px 3px 5px;
+    text-transform:uppercase;
+    cursor: pointer;
+}
+
+.newsletter_widget .submitNewsletter:hover {
+    background: none repeat scroll 0 0 #BBBDBF;
+    color: #000;
+}
+
+body {
+	padding-bottom:68px;
+}
+
+/* widget */
+.widget_error .error{
+	color:red;
+}
+
+/* responsive */
+@media all and (max-width: 570px) {
+	.newsletter_container{
+		padding-top: 0px;
+	}
+	.newsletter_widget {
+		width: 240px;
+		left: 50%;
+		margin-left: -140px;
+		padding: 20px;
+	}
+	.newsletter_info img{
+    	max-width: 240px;
+	}
+	.newsletter_message {
+	    font-size:13px;
+	    line-height: 15px;
+	    margin-bottom: 20px;
+	}
+	.newsletter_widget .newsletter_email{
+		width: 110px;
+		font-size: 10px;
+	}
+	.newsletter_widget input{
+		margin-left: 0px;
+	}
+	.newsletter_widget .submitNewsletter{
+		margin-left: 4px;
+		font-size: 12px;
+	}
+}
